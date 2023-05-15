@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pyapi"
+version = "0.1.0"
+description = "Dependencies for web-interaction with CWM-API"
+authors = ["Marcus Andrist <marcus.andrist@drake.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = "^23.3.0"
+requests = "^2.30.0"
+pytest = "^7.3.1"
+pytest-cov = "^4.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
