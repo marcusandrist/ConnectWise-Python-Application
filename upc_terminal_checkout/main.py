@@ -1,38 +1,32 @@
+import typing
+from PyQt5 import QtCore
 from wrapper import endpoint_get, endpoint_post
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget
+from PyQt5.QtGui import QIcon
 
-class BarcodeScannerApp(QMainWindow):
-    def __init__(self):
-        super().__init__()
+# Subclass for QMainWindow 
+class ScannerApp(QMainWindow):
 
-        self.init_ui()
+    def __init__(self, parent=None):
+        super().__init__(parent)
 
-    def init_ui(self):
-        self.setWindowTitle("Barcode Scanner App")
+        # Window settings
+        self.setWindowTitle("Tool Checkout v0.1.0")
+        self.setWindowIcon(QIcon("tool_checkout.png"))
+        self.resize(600, 600)
 
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
+        # Set CSS (to-do)
+        # self.load_stylesheet('styles.css')
 
-        layout = QVBoxLayout(central_widget)
+        # Execute application inside GUI
+        self.app()
 
-        start_button = QPushButton("Start Scanning", self)
-        start_button.clicked.connect(self.start_scanning)
-        layout.addWidget(start_button)
-
-        quit_button = QPushButton("Quit", self)
-        quit_button.clicked.connect(self.quit_app)
-        layout.addWidget(quit_button)
-
-    def start_scanning(self):
-        print("Start scanning barcodes")
-        # Here, you can call the capture_barcode() function from the previous example
-        # Keep in mind you'll need to modify the function to work with the GUI
-
-    def quit_app(self):
-        self.close()
+    def app(self):
+        pass
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    main_win = BarcodeScannerApp()
+    main_win = ScannerApp()
     main_win.show()
+    sys.exit(app.exec_())
