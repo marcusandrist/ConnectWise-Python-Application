@@ -8,7 +8,7 @@ def endpoint_get(endpoint: str) -> dict:
         headers=headers,
     ).json()
 
-# # Accepts an endpoint (format /xxx/xxx) and a dictionary as a json payload
+# Accepts an endpoint (format /xxx/xxx) and a dictionary as a json payload
 def endpoint_post(endpoint: str, payload: dict) -> dict:
     post_response = post(base_URL + endpoint, headers=headers, json=payload)
     return post_response.json()
