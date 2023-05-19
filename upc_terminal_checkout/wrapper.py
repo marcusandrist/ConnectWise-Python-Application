@@ -4,7 +4,8 @@ from requests.exceptions import RequestException
 from typing import Dict, List, AnyStr, Optional
 
 
-# helper functions
+# helper functions/global variables
+
 # Returns a list of all configurations that match the type "target"
 def config_filter(data: List[Dict], target: AnyStr):
     filtered_data = [item for item in data if item["type"]["name"] == target]
@@ -56,8 +57,8 @@ def endpoint_patch(endpoint: AnyStr, payload: Dict) -> Optional[Dict]:
         print(f"JSON processing error: {e}")
     except Exception as e:
         print(f"Unexpected error: {e}")
-
-    return None
+    
+    return response.json()
 
 
 # More heavily parameterized https request & processor methods live here
@@ -66,3 +67,17 @@ def endpoint_patch(endpoint: AnyStr, payload: Dict) -> Optional[Dict]:
 # Returns all the configurations of of type Key
 def fetch_keys() -> List[Dict]:
     return config_filter(endpoint_get("/company/configurations"), "Key")
+
+# Retrieve a key based off a upc tag
+def retrieve_key(upc: AnyStr) -> Dict:
+    pass
+
+# json patch obj FORMATTTTT [{"op": "replace", "path": "status", "value": {"id": "7"}}]
+# Checks In a Key (id: 7)
+def check_in_key(key_id):
+    try:
+        endpoint_patch(f"/company/configurations/{key_id}", [{"op": "replace", "path": "status", "value": {"id": "7"}}])
+    except:
+        return "Key not found."
+# Checks Out a Key (id: 8)
+# Reports a Key as lost (id: 9)
