@@ -1,6 +1,7 @@
 # PyConnectWise
 -ConnectWise API application, written in Python using Requests.  
--This is some of the framework and app strcuture for the deliverable provided to Baker Tech Services.
+-This is snapshot of the public framework and app strcuture for the deliverable provided to Baker Tech Services.
+-The deployable application resides internally with a config module utilizing a secure local connection to api keys and header info.
 
 ### Contains
 -Some simple http/https verbs for API integration  
