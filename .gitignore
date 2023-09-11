@@ -3,10 +3,12 @@ __pycache__/
 config.py
 *.py[cod]
 *$py.class
-
+.gitignore
 # C extensions
 *.so
-
+*.lock
+*.toml
+LICENSE
 # Distribution / packaging
 .Python
 build/
