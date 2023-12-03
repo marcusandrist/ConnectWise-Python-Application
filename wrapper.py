@@ -2,15 +2,6 @@ from requests import post, patch, get
 from typing import Dict, List
 from config import headers, base_url
 
-
-'''
-api wrapper for Baker Tech Services Item checkout (release-v1.0.1)
-Author: Marcus Andrist marcus.andrist@drake.edu
-Date: 6/06/23
-Desc:
-This file utilizes the ConnectWise api wrapper (wrapper.py) to send GET, POST, and PUT requests to the ConnectWise PSA database integrated through their RESTful api, their documentation can be found here: https://developer.connectwise.com/
-'''
-
 class Wrapper:
     def __init__(self):
         # Instance variables (authentication and headers for api, resolved from a local config file)
