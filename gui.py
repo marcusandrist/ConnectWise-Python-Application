@@ -2,14 +2,6 @@ from wrapper import Wrapper
 import tkinter as tk
 from logo import serve_logo
 
-'''
-Application builder for Baker Tech Services Item checkout (release-v1.0.1)
-Author: Marcus Andrist marcus.andrist@drake.edu
-Date: 6/09/23
-Desc:
-This file utilizes a GUI application using tkiner and the ConnectWise api wrapper (wrapper.py) to send GET, POST, and PUT requests to the ConnectWise PSA database integrated through their RESTful api, their documentation can be found here: https://developer.connectwise.com/
-'''
-
 
 class App:
     # Tkinter class constructor
@@ -103,10 +95,6 @@ class App:
 
         def retrieve_input():
             return text.get('1.0', tk.END)
-
-
-
-
         
         def submit():
             index = listbox.curselection()[0]
